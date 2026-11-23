@@ -26,3 +26,4 @@ logs/
 
 # Brag video output (generated, not source)
 brag-output/
+.DS_Store
