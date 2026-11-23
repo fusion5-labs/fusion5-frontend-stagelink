@@ -7,6 +7,8 @@ export type DashboardNav = { id: string; label: string; icon: ComponentType<{ cl
 
 const identities = {
   customer: { title: 'Your backstage', name: 'Jordan Rivera', initials: 'JR', tag: 'Event organizer', note: 'Great nights start here.' },
+  artist: { title: 'Artist studio', name: 'Aria Nova', initials: 'AN', tag: 'Artist demo account', note: 'Make your next encore.' },
+  renter: { title: 'Equipment studio', name: 'AudioVault Rentals', initials: 'AV', tag: 'Rental demo account', note: 'Behind every great show.' },
 };
 
 export default function DashboardShell({ role, navItems, activeTab, onNavigate, onGoToLanding, children }: {
