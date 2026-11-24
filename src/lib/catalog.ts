@@ -1,4 +1,10 @@
-export type Service = {
+import { parsePackages, type PackageCatalog } from './gigPackages.ts';
+import { depositPolicy, type DepositPolicy } from './securityDeposit.ts';
+
+export type Service = PackageCatalog & {
+  packageInclusions?: string[];
+  listingStatus?: 'live' | 'paused' | 'maintenance';
+  depositPolicy?: DepositPolicy;
   id: string;
   listingId?: string;
   name: string;
