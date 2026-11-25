@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import LandingPage from './components/LandingPage';
 import CustomerDashboard from './components/CustomerDashboard';
 import ArtistDashboard from './components/ArtistDashboard';
+import RenterDashboard from './components/RenterDashboard';
 import AuthModal from './components/AuthModal';
 import SplashScreen from './components/SplashScreen';
 import { AnimatePresence, LayoutGroup } from 'motion/react';
@@ -30,7 +31,7 @@ export default function App() {
                 {authMode && <AuthModal initialMode={authMode} onClose={() => setAuthMode(null)} onSuccess={(r) => { setRole(r as Role); setAuthMode(null); }} />}
               </>
             ) : (
-              role === 'customer' ? <CustomerDashboard onOpenBooking={() => {}} onOpenPayments={() => {}} onOpenChat={() => {}} onGoToLanding={() => setRole('visitor')} /> : <ArtistDashboard onOpenWorkspace={() => {}} onGoToLanding={() => setRole('visitor')} />
+              role === 'customer' ? <CustomerDashboard onOpenBooking={() => {}} onOpenPayments={() => {}} onOpenChat={() => {}} onGoToLanding={() => setRole('visitor')} /> : role === 'artist' ? <ArtistDashboard onOpenWorkspace={() => {}} onGoToLanding={() => setRole('visitor')} /> : <RenterDashboard onOpenWorkspace={() => {}} onGoToLanding={() => setRole('visitor')} />
             )}
           </div>
         )}
