@@ -12,3 +12,10 @@
     font-family: system-ui, -apple-system, sans-serif;
   }
 }
+
+/* Customer Badge Styles (Module 1) */
+.badge-violet {
+  background: rgba(139, 92, 246, 0.15);
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
