@@ -12,6 +12,15 @@
     "test": "node --experimental-strip-types --test tests/*.test.mjs"
   },
   "dependencies": {
+    "@base-ui/react": "^1.8.0",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "postprocessing": "^6.39.5",
+    "three": "^0.186.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.47.0",
     "react": "^19.0.0",
@@ -19,6 +28,7 @@
     "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
+    "@types/three": "^0.186.0",
     "@tailwindcss/vite": "^4.0.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
