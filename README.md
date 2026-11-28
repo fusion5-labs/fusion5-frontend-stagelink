@@ -16,7 +16,7 @@
 
 <p>
   <a href="https://stagelink-kohl.vercel.app/"><img src="https://img.shields.io/badge/🚀%20LIVE%20DEMO-Vercel-0f172a?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/></a>&nbsp;
-  <a href="https://github.com/fusion5-labs/StageLink-Frontend/actions"><img src="https://img.shields.io/badge/CI%20BUILD-Passing-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status"/></a>&nbsp;
+  <a href="https://github.com/fusion5-labs/fusion5-frontend-stagelink/actions"><img src="https://img.shields.io/badge/CI%20BUILD-Passing-059669?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status"/></a>&nbsp;
   <img src="https://img.shields.io/badge/Tests-69%20Passed-059669?style=for-the-badge&logo=checkmarx&logoColor=white" alt="Tests"/>&nbsp;
   <img src="https://img.shields.io/badge/License-Academic-b45309?style=for-the-badge" alt="License"/>
 </p>
@@ -41,13 +41,13 @@
 
 <br/>
 
-<img src="docs/assets/soundstage-player.svg" width="100%" alt="StageLink Live Soundstage Player"/>
+<img src="public/soundstage-player.svg" width="100%" alt="StageLink Live Soundstage Player"/>
 
 </div>
 
 <br/>
 
-<img src="docs/assets/audio-equalizer.svg" width="100%" alt="StageLink Audio Equalizer Waveform"/>
+<img src="public/audio-equalizer.svg" width="100%" alt="StageLink Audio Equalizer Waveform"/>
 
 <br/>
 
@@ -219,7 +219,7 @@ Color interpolation across CSS custom properties (`--sl-bg`, `--sl-panel`, `--sl
 </td></tr>
 </table>
 
-<img src="docs/assets/audio-equalizer.svg" width="100%" alt="StageLink Audio Equalizer Waveform"/>
+<img src="public/audio-equalizer.svg" width="100%" alt="StageLink Audio Equalizer Waveform"/>
 
 ## Fusion-5
 
@@ -293,11 +293,11 @@ Color interpolation across CSS custom properties (`--sl-bg`, `--sl-panel`, `--sl
 
 | Member | Module | Core Files & Components |
 | :--- | :--- | :--- |
-|  Ravindu Saranga | Core Platform & Visitor Experience | `App.tsx`, `main.tsx`, `index.css`, `LandingPage.tsx`, `AuthModal.tsx`, `SplashScreen.tsx`, `SwitchMode.tsx`, `MusicNoteScene.tsx`, `liquid-glass.js`, `Icons.tsx` |
-|  Nesandu Hesitha | Negotiation & Real-Time Pipeline | `BookingChat.tsx`, `MessagesCenter.tsx`, `NotificationCenter.tsx`, `booking-chat.css`, `pipeline.css`, `pipeline.test.mjs`, `MODULE4-EVALUATION.md` |
-|  Manuri Pabara | Artist & Performer Ecosystem | `ArtistDashboard.tsx`, `ArtistCollectionCard.tsx`, `BrowseArtistsPage.tsx`, `collections.css`, `community.ts`, `community.test.mjs` |
-|  Dinuka | Customer & Equipment Marketplace | `CustomerDashboard.tsx`, `RentEquipmentPage.tsx`, `RenterDashboard.tsx`, `SavedItems.tsx`, `SaveListingButton.tsx`, `PricingShowcase.tsx`, `dashboard.css` |
-|  Jhone Shamintha | Finance, PDF Documents & Admin Desk | `PaymentCheckout.tsx`, `PaymentGlass.tsx`, `BookingMilestones.tsx`, `BookingSettlement.tsx`, `BookingDocuments.tsx`, `documentPdf.ts`, `AdminDashboard.tsx`, `tests/` |
+| Ravindu Saranga | Core Platform & Visitor Experience | `App.tsx`, `main.tsx`, `index.css`, `LandingPage.tsx`, `AuthModal.tsx`, `SplashScreen.tsx`, `SwitchMode.tsx`, `MusicNoteScene.tsx`, `liquid-glass.js`, `Icons.tsx` |
+| Nesandu Hesitha | Negotiation & Real-Time Pipeline | `BookingChat.tsx`, `PipelineChat.tsx`, `MessagesCenter.tsx`, `NotificationCenter.tsx`, `QuotationCard.tsx`, `booking-chat.css`, `pipeline.css` |
+| Manuri Pabara | Artist & Performer Ecosystem | `ArtistDashboard.tsx`, `ArtistCollectionCard.tsx`, `ArtistAudition.tsx`, `BrowseArtistsPage.tsx`, `AvailabilityEditor.tsx`, `PortfolioManager.tsx`, `GigPackages.tsx` |
+| Dinuka | Customer & Equipment Marketplace | `CustomerDashboard.tsx`, `RentEquipmentPage.tsx`, `RenterDashboard.tsx`, `SavedItems.tsx`, `SaveListingButton.tsx`, `PricingShowcase.tsx`, `StockAvailability.tsx` |
+| Jhone Shamintha | Finance, PDF Documents & Admin Desk | `PaymentCheckout.tsx`, `PaymentGlass.tsx`, `BookingMilestones.tsx`, `BookingSettlement.tsx`, `BookingDocuments.tsx`, `AdminDashboard.tsx`, `DisputeArbitration.tsx` |
 
 ---
 
@@ -308,53 +308,88 @@ Color interpolation across CSS custom properties (`--sl-bg`, `--sl-panel`, `--sl
 <br/>
 
 ```
-StageLink-Frontend/
-├── 📁 public/                           # Static assets, 3D models & vector fonts
+fusion5-frontend-stagelink/
+├── 📁 public/                           # Static assets, 3D models, audio & vector fonts
 │   ├── 🎬 Stage-Link-Background.mp4     # Ambient concert hero video loop
 │   ├── 🖼️  stagelink-logo.png            # Transparent brand identity
+│   ├── 🎨 soundstage-player.svg         # Live soundstage README visualizer
+│   ├── 📊 audio-equalizer.svg           # Audio equalizer README waveform
+│   ├── 🖼️  artist-background.webp        # Artist workspace backdrop
+│   ├── 🖼️  customer-background.webp      # Customer workspace backdrop
+│   ├── 🖼️  equipment-rent-background.webp # Renter workspace backdrop
 │   ├── 🔮 liquid-glass.js               # WebGL liquid refraction shader
+│   ├── 📁 audition/                     # Sample audition MP3s & notes
 │   ├── 📁 models/                       # 3D GLTF assets
 │   │   ├── music-note.glb
 │   │   └── music-note-collection.glb
 │   └── 📁 fonts/                        # Embedded vector typography for PDF engine
-│       ├── NotoSans-Regular.ttf
-│       └── NotoSans-Bold.ttf
 ├── 📁 src/
 │   ├── 📁 components/                   # UI components & interactive panels
+│   │   ├── AdminAIEngine.tsx            # AI operations & prompt configurations
+│   │   ├── AdminAnalytics.tsx           # Executive KPI analytics
 │   │   ├── AdminDashboard.tsx           # Platform oversight & compliance desk
+│   │   ├── AdminPayments.tsx            # Admin payment & escrow controls
+│   │   ├── AdminReviewDesk.tsx          # KYC & verification queue
+│   │   ├── ArtistAudition.tsx           # Performer audio audition player
 │   │   ├── ArtistCollectionCard.tsx     # Interactive performer card
 │   │   ├── ArtistDashboard.tsx          # Performer booking & schedule manager
 │   │   ├── AuthModal.tsx                # Dual-panel animated sliding auth modal
-│   │   ├── BookingDocuments.tsx         # In-browser PDF invoice & receipt viewer
+│   │   ├── AvailabilityEditor.tsx       # Blocked periods & calendar scheduling
+│   │   ├── BookingChat.tsx              # Real-time negotiation chat
+│   │   ├── BookingDocuments.tsx         # Booking invoices & receipts
 │   │   ├── BookingMilestones.tsx        # Milestone progress tracker
 │   │   ├── BookingSettlement.tsx        # Escrow payout calculations
+│   │   ├── CasePortal.tsx               # Support & dispute case portal
 │   │   ├── CustomerDashboard.tsx        # Organizer event planning wizard
+│   │   ├── DashboardShell.tsx           # Shared role-based workspace shell
+│   │   ├── DisputeArbitration.tsx       # Dispute resolution & mediation
+│   │   ├── EquipmentInspection.tsx      # Gear inspection checklists
+│   │   ├── EquipmentSpecsEditor.tsx     # Equipment specification editor
+│   │   ├── GigPackages.tsx              # Tiered performer gig packages
 │   │   ├── LandingPage.tsx              # Flagship video hero & showcase
+│   │   ├── MessagesCenter.tsx           # Centralized messaging inbox
 │   │   ├── MotionCarousel.tsx           # Embla-powered touch carousel
 │   │   ├── PaymentCheckout.tsx          # 3D animated credit card checkout
 │   │   ├── PaymentGlass.tsx             # Card flip presentation component
+│   │   ├── PipelineChat.tsx             # Interactive quotation pipeline chat
+│   │   ├── PortfolioManager.tsx         # Artist media portfolio manager
+│   │   ├── ProviderDashboard.tsx        # Unified provider operations view
+│   │   ├── QuotationCard.tsx            # Itemized quote & counteroffer card
 │   │   ├── RentEquipmentPage.tsx        # Audio, lighting & stage gear catalog
 │   │   ├── RenterDashboard.tsx          # Fleet availability & dispatch tracker
 │   │   ├── SavedItems.tsx               # Wishlist store & favorite items
+│   │   ├── SecurityDeposit.tsx          # Security deposit management
 │   │   ├── SplashScreen.tsx             # Animated brand intro screen
-│   │   └── SwitchMode.tsx               # Stage Concert / Cosmic theme switcher
-│   ├── 📁 lib/                          # State management, pipeline & PDF engines
-│   │   ├── booking.ts                   # Escrow rules & integer-cent financial ledger
-│   │   ├── BookingContext.tsx           # React context for active negotiations
-│   │   ├── bookingDocuments.ts          # PDF document schemas & data formatting
-│   │   ├── DashboardContext.tsx         # Multi-role dashboard global state
-│   │   ├── documentPdf.ts               # jsPDF vector document builder
-│   │   └── pipeline.ts                  # Quotation & counteroffer state machine
+│   │   ├── StockAvailability.tsx        # Gear stock availability tracker
+│   │   ├── SwitchMode.tsx               # Stage Concert / Cosmic theme switcher
+│   │   └── watermelon/                  # Morphing discovery bar
+│   ├── 📁 lib/                          # State, rules & domain logic
+│   │   ├── AppearanceContext.tsx        # Theme & sidebar appearance context
+│   │   ├── arbitration.ts               # Dispute & arbitration state logic
+│   │   ├── booking.ts                   # Escrow rules & integer-cent ledger
+│   │   ├── calendar.ts                  # Calendar & blackout date utilities
+│   │   ├── catalog.ts                   # Service & availability catalog types
+│   │   ├── catalogPresentation.ts       # Catalog display helpers
+│   │   ├── equipmentSpecs.ts            # Equipment specs validation & helpers
+│   │   ├── gigPackages.ts               # Gig package pricing & tiers
+│   │   ├── inspections.ts               # Inspection state & checklist logic
+│   │   ├── portfolioMedia.ts            # Portfolio media handling
+│   │   ├── securityDeposit.ts           # Security deposit calculations
+│   │   ├── stock.ts                     # Inventory & stock rules
+│   │   ├── useMotionEnvironment.ts      # Motion/reduced-motion environment hook
+│   │   ├── usePricingDeck.ts            # Scroll-based pricing deck animations
+│   │   └── utils.ts                     # Shared className & UI utilities
 │   ├── App.tsx                          # Root orchestrator & role switcher
 │   ├── main.tsx                         # Vite React 19 entry point
 │   └── index.css                        # Tailwind CSS v4 design tokens & themes
-├── 📁 tests/                            # Automated test suites (69 tests)
-│   ├── booking.test.mjs                 # Escrow calculations & fee deductions
-│   ├── community.test.mjs               # Profiles, reviews & verification tests
-│   ├── completion.test.mjs              # Event lifecycle & gig completion
-│   ├── dashboard.test.mjs               # Multi-role state & draft persistence
-│   ├── module4.test.mjs                 # Quotations, overtime & refund desk
-│   └── pipeline.test.mjs                # Chat negotiation state machine
+├── 📁 tests/                            # Automated unit & integration test suites
+│   ├── calendar-blackout.test.mjs       # Calendar blackout & scheduling tests
+│   ├── completion.test.mjs              # Event lifecycle & gig completion tests
+│   ├── equipment-specs.test.mjs         # Equipment specification tests
+│   ├── gig-packages.test.mjs            # Gig package tier & pricing tests
+│   ├── inspections.test.mjs             # Equipment inspection tests
+│   ├── security-deposit.test.mjs        # Security deposit rule tests
+│   └── stock.test.mjs                   # Stock availability tests
 ├── 🐳 Dockerfile                        # Multi-stage production container build
 ├── 🐳 docker-compose.yml                # Container orchestration
 ├── ⚙️  nginx.conf                        # Production Nginx reverse proxy config
@@ -430,8 +465,8 @@ Funds can only be released upon mutual completion or explicit administrative sig
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Nezz77/StageLink-Frontend.git
-cd StageLink-Frontend
+git clone https://github.com/fusion5-labs/fusion5-frontend-stagelink.git
+cd fusion5-frontend-stagelink
 
 # 2. Install dependencies with pnpm
 pnpm install
@@ -451,16 +486,16 @@ pnpm dev
 | `pnpm dev` | ⚡ **Start Dev Server** | Launches Vite dev server with instant HMR on port 8443 |
 | `pnpm build` | 📦 **Production Build** | Compiles optimized bundle in `dist/` in ~380ms |
 | `pnpm preview` | 👁️ **Preview Build** | Serves compiled production build locally |
-| `pnpm test` | 🧪 **Run Test Suite** | Runs all 69 automated unit & integration tests |
+| `pnpm test` | 🧪 **Run Test Suite** | Runs automated unit & integration tests |
 | `pnpm typecheck` | 🔍 **Type Checking** | Runs `tsc --noEmit` across all TypeScript modules |
 | `pnpm format` | ✨ **Code Formatting** | Formats code with ultra-fast `oxfmt` |
 
 ---
 
-## 🧪 Test Suite — 69 / 69 Passing
+## 🧪 Test Suite
 
 <details>
-<summary><b>🟢 Click to view full test results</b></summary>
+<summary><b>🟢 Click to view test command & coverage</b></summary>
 <br/>
 
 ```bash
@@ -468,21 +503,13 @@ pnpm test
 ```
 
 ```text
-✔  price includes no customer surcharge; fractional cents round consistently
-✔  quote agreement, amount, version, payment kind and customer role are required
-✔  optional advance is held until admin transfer and is releasable before the gig
-✔  advance then final payment deducts the 5% fee once across both admin transfers
-✔  overtime requires another party approval and changes final balance, never the original fee
-✔  only admin can resolve a pending refund, with a reason and explicit boolean decision
-✔  invoice, receipt and provider settlement derive from current ledger with no customer fee
-...
-ℹ  tests       69
-ℹ  suites       0
-ℹ  pass        69
-ℹ  fail         0
-ℹ  cancelled    0
-ℹ  skipped      0
-ℹ  duration_ms  184ms
+✔  calendar-blackout.test.mjs  — Calendar blackout & scheduling rules
+✔  completion.test.mjs         — Event lifecycle & gig completion
+✔  equipment-specs.test.mjs    — Equipment specification validation
+✔  gig-packages.test.mjs       — Gig package tiers & pricing
+✔  inspections.test.mjs        — Equipment inspection checklists
+✔  security-deposit.test.mjs   — Security deposit calculations
+✔  stock.test.mjs              — Stock availability & inventory rules
 ```
 
 </details>
@@ -515,21 +542,6 @@ docker ps
 | 👥 **Group** | **FUSION 5** *Group No: 6* |
 | 🏢 **Industry Partner** | **99x** |
 | 👨‍🏫 **Supervisor** | Mr. P K K N S Jayathilake |
-
-</div>
-
-<br/>
-
-### 📎 Project Documentation
-
-<div align="center">
-
-| Document | Description |
-| :---: | :--- |
-| 👥 [**Individual Contributions Dossier**](docs/INDIVIDUAL_CONTRIBUTIONS.md) | Complete breakdown of responsibilities and achievements for all 5 team members |
-| 📋 [**Project Specification & Scope**](docs/PROJECT_SPECIFICATION.md) | Problem statement, aim, objectives, inclusions/exclusions, and technology mapping |
-| 📐 [**System Design & Diagram Index**](docs/SYSTEM_DESIGN_AND_DIAGRAMS.md) | Use case, ER/EER models, class diagram, activity flows, and module sequence diagrams |
-| 📖 [**Consolidated Academic References**](REFERENCES.md) | Complete bibliography and research literature review |
 
 </div>
 
