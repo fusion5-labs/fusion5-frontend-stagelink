@@ -1,0 +1,121 @@
+<svg viewBox="0 0 850 94" xmlns="http://www.w3.org/2000/svg" width="100%" height="94">
+  <defs>
+    <linearGradient id="playerBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="50%" stop-color="#111726"/>
+      <stop offset="100%" stop-color="#0e1322"/>
+    </linearGradient>
+    <linearGradient id="playerBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="30%" stop-color="#312e81"/>
+      <stop offset="70%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="eqBarGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="vinylGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338ca"/>
+      <stop offset="50%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    @keyframes vinylSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes eq1 { 0%, 100% { height: 6px; y: 44px; } 50% { height: 26px; y: 24px; } }
+    @keyframes eq2 { 0%, 100% { height: 18px; y: 32px; } 50% { height: 38px; y: 12px; } }
+    @keyframes eq3 { 0%, 100% { height: 24px; y: 26px; } 50% { height: 10px; y: 40px; } }
+    @keyframes eq4 { 0%, 100% { height: 12px; y: 38px; } 50% { height: 32px; y: 18px; } }
+    @keyframes eq5 { 0%, 100% { height: 28px; y: 22px; } 50% { height: 14px; y: 36px; } }
+    @keyframes eq6 { 0%, 100% { height: 8px; y: 42px; } 50% { height: 36px; y: 14px; } }
+    @keyframes eq7 { 0%, 100% { height: 20px; y: 30px; } 50% { height: 8px; y: 42px; } }
+    @keyframes eq8 { 0%, 100% { height: 32px; y: 18px; } 50% { height: 16px; y: 34px; } }
+
+    .pulse-dot { animation: pulseDot 2s ease-in-out infinite; transform-origin: 92px 28px; }
+    .vinyl-disc { animation: vinylSpin 8s linear infinite; transform-origin: 47px 47px; }
+    .b1 { animation: eq1 0.85s ease-in-out infinite; }
+    .b2 { animation: eq2 0.72s ease-in-out infinite; }
+    .b3 { animation: eq3 0.95s ease-in-out infinite; }
+    .b4 { animation: eq4 0.68s ease-in-out infinite; }
+    .b5 { animation: eq5 1.05s ease-in-out infinite; }
+    .b6 { animation: eq6 0.78s ease-in-out infinite; }
+    .b7 { animation: eq7 0.92s ease-in-out infinite; }
+    .b8 { animation: eq8 0.82s ease-in-out infinite; }
+    .text-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13.5px; font-weight: 700; fill: #f1f5f9; }
+    .text-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #94a3b8; }
+    .text-live { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 9.5px; font-weight: 800; fill: #818cf8; letter-spacing: 1px; }
+    .text-time { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 10px; fill: #64748b; }
+  </style>
+
+  <!-- Player Outer Container -->
+  <rect x="2" y="2" width="846" height="90" rx="12" fill="url(#playerBg)" stroke="url(#playerBorder)" stroke-width="1.5"/>
+
+  <!-- Rotating Stage Disc Icon -->
+  <g>
+    <circle cx="47" cy="47" r="26" fill="url(#vinylGrad)" stroke="#312e81" stroke-width="1.5"/>
+    <g class="vinyl-disc">
+      <circle cx="47" cy="47" r="21" fill="none" stroke="#4f46e5" stroke-width="0.75" stroke-dasharray="3,3" opacity="0.6"/>
+      <circle cx="47" cy="47" r="15" fill="none" stroke="#818cf8" stroke-width="0.75" stroke-dasharray="4,2" opacity="0.5"/>
+      <circle cx="47" cy="47" r="7" fill="#0b0f19" stroke="#6366f1" stroke-width="1.2"/>
+      <circle cx="47" cy="47" r="2.5" fill="#c7d2fe"/>
+      <!-- Grooves -->
+      <line x1="28" y1="47" x2="33" y2="47" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+      <line x1="61" y1="47" x2="66" y2="47" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+      <line x1="47" y1="28" x2="47" y2="33" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+      <line x1="47" y1="61" x2="47" y2="66" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Live Status Badge -->
+  <circle class="pulse-dot" cx="92" cy="28" r="3.5" fill="#10b981"/>
+  <text x="103" y="31" class="text-live">LIVE SOUNDSTAGE • 432Hz VISUALIZER</text>
+
+  <!-- Title & Description -->
+  <text x="92" y="50" class="text-title">StageLink Studio • The Live Entertainment &amp; Gear Ecosystem</text>
+  <text x="92" y="67" class="text-sub">Artist Discovery • Interactive Negotiation • Milestone Escrow Ledger</text>
+
+  <!-- Progress Bar Track -->
+  <rect x="92" y="77" width="460" height="4" rx="2" fill="#1e293b"/>
+  <rect x="92" y="77" width="310" height="4" rx="2" fill="url(#progressGrad)"/>
+  <circle cx="402" cy="79" r="4" fill="#818cf8"/>
+  <text x="562" y="82" class="text-time">03:42 / ∞ LIVE</text>
+
+  <!-- Animated Sound Equalizer Spectrum (Right Side) -->
+  <g transform="translate(680, 20)">
+    <rect class="b1" x="0" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b2" x="7" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b3" x="14" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b4" x="21" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b5" x="28" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b6" x="35" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b7" x="42" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b8" x="49" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b2" x="56" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b5" x="63" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b1" x="70" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b7" x="77" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b4" x="84" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b6" x="91" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b3" x="98" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b8" x="105" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b5" x="112" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b2" x="119" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b6" x="126" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b1" x="133" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+    <rect class="b4" x="140" width="3.5" rx="1.75" fill="url(#eqBarGrad)"/>
+  </g>
+</svg>
